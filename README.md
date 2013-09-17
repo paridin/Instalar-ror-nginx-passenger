@@ -1,4 +1,3 @@
-
 # Instalación 
 
 **Ruby + Rails + OpenSSL + Nginx**
@@ -6,48 +5,41 @@
 
 ***Nota: El ambiente no debe contener ninguna instalación de Ruby en caso de tenerla eliminar todo***
 
-ubicarnos en la ruta donde descargaremos todo el contenido en mi caso ``/usr/local/src``
+Ubicarnos en la ruta donde descargaremos todo el contenido en mi caso ``/usr/local/src``
 
 ```
 cd /usr/local/src
 ```
 
-Descargamos la ultima versión de ruby 
-
-```
-sudo curl -O "https://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p247.tar.gz"
-sudo tar -xvzf ruby-2.0.0-p247.tar.gz
-cd ruby-2.0.0-p247
-sudo ./configure
-sudo make
-sudo make install
-```
-
-Instalar RVM (Ruby Vitual Machine)
+**Instalar RVM (Ruby Vitual Machine)**
 ```
 \curl -L https://get.rvm.io | bash -s stable
 ```
 
-Corrije soporte de OpenSSL
+**Corrije soporte de OpenSSL**
 ```
 rvm pkg install openssl
 rvm reinstall 2.0.0 --with-openssl-dir=$rvm_path/usr
 ```
 
-Instando rails vía gems
+**Instando rails vía gems**
 ```
 gem update
 gem install rails
 ```
 
+**Instalando Passenger**
+```
+gem install passenger
+```
 
-Instalando paquetería faltante para correr el servidor de prueba
+**Instalando paquetería faltante para correr el servidor de prueba**
 
 ```
 bundle install
 ```
 
-Compilando Nginx con soporte de passenger
+**Compilando Nginx con soporte de passenger**
 
 ```
 curl -O "http://nginx.org/download/nginx-1.5.2.tar.gz"
@@ -62,7 +54,7 @@ b) opción 2
 **El path para configurar nginx** ``/usr/local/``
 
 ```
-editar ``nginx.conf``
+**editar** ``nginx.conf``
 
 ```
 sudo vi /usr/local/conf/nginx.conf 
@@ -79,7 +71,7 @@ sudo vi /usr/local/conf/nginx.conf
   }
 ```
 
-Crear un bloque server para servir a nuestra aplicación Ruby on Rails
+**Crear un bloque server para servir a nuestra aplicación Ruby on Rails**
 
 ```
 sudo vi /usr/local/conf/sites-enabled/demo_ruby_on_rails.conf
