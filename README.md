@@ -1,27 +1,10 @@
-# Daemon Nginx uWSGI
-==================
 
-The daemon were written in python, it was developed on OSX
+# Instalación 
 
-*Nginx is compiled on ``/usr/local/`` and uWSGI service installed on ``virtualenv``*
-
-You have to change some paths in the script to execute it, also to find Nginx and uWSGI services in your system unless you have the same paths.
-
-***Note: psutil must be installed, if you don't have it execute the command***
-
-```bash
-sudo easy_install psutil
-```
+**Ruby + Rails + OpenSSL + Nginx**
 
 
-# How to use it:
-
-You must put ``start_server.py`` in your root project ``/path/your/projectName/``
-
-# Instalación Ruby + Rails + OpenSSL + Nginx
-==================
-
-***Nota: El ambiente no debe contener ninguna instalación de Ruby en caso de tenerla eliminar todo
+***Nota: El ambiente no debe contener ninguna instalación de Ruby en caso de tenerla eliminar todo***
 
 ubicarnos en la ruta donde descargaremos todo el contenido en mi caso ``/usr/local/src``
 
